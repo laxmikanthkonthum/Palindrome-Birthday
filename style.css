@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+  }
+  main{
+    max-width: "50%";
+    margin: auto;
+    padding-left: 6rem;
+  }
+  .bday{
+    padding-bottom: 2rem;
+  }
+  .btn{
+    margin-left: 80px;
+    padding-bottom: 2rem;
+  }

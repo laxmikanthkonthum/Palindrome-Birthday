@@ -106,9 +106,9 @@ function isLeap(year) {
 }
 function nextPalindromeDate(date){
   var i =0;
-  console.log(date);
+  //console.log(date);
   var newDate = nextDate(date);
-  console.log(newDate);
+  //console.log(newDate);
   while(1){
     i = i+1;
     var allDates = isPalindromeForAll(newDate);
@@ -177,6 +177,7 @@ var date = {
 }
 var inputDate = document.querySelector('.birthday');
 var submitBtn = document.getElementById('submit');
+var output = document.querySelector(".output");
 submitBtn.addEventListener('click',logic);
 function logic(){
   var userDate = inputDate.value;
@@ -193,7 +194,7 @@ function logic(){
     };
 var allDates = isPalindromeForAll(date);
 var flag = false;
-console.log(allDates)
+//console.log(allDates)
 for(var j=0; j<allDates.length;j++){
     if(allDates[j]){
         flag =true ;
@@ -201,17 +202,18 @@ for(var j=0; j<allDates.length;j++){
     }
 }
 if(flag == false){
-  console.log(date,typeof date.day)
-      console.log(prevDate(date));
+  //console.log(date,typeof date.day)
+      // console.log(prevDate(date));
       var pastCtr = prevPalindromeDate(date)[0];
       var pastDate = prevPalindromeDate(date)[1];
       var futureCtr = nextPalindromeDate(date)[0];
       var futureDate = nextPalindromeDate(date)[1];
-      console.log(pastCtr,pastDate);
-      console.log(futureCtr,futureDate);
+      // console.log(pastCtr,pastDate);
+      // console.log(futureCtr,futureDate);
+      output.innerText = "The Previous Palindrome date was " + pastDate.day + "-" + pastDate.month + "-" + pastDate.year + " and you missed it by " + pastCtr + " days";
 
 }else{
-  console.log("Yay! its a Palindrome");
+  output.innerText = "Yay! its a Palindrome" ;
 }
 }
 }
